@@ -34,9 +34,9 @@ export default function TestAPi() {
       <button value="tv" onClick={handleType}>Tv-shows</button>
       <ul>
         {medias.map(media => <li>
-          <h3>
+          <h4>
             {media.original_title || media.original_name}
-          </h3>
+          </h4>
           <img src={`//image.tmdb.org/t/p/w220_and_h330_face/${media.poster_path}`} alt=""></img>
           </li>)}
       </ul>
