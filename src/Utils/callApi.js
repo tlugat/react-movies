@@ -1,9 +1,11 @@
 import getUrl from './getUrl';
-
-const callApi = (setState, type) => {
-  fetch(getUrl(type))
+import './getFiltersSlider';
+import getFiltersSlider from './getFiltersSlider';
+const callApi = (setState, filters) => {
+  fetch(getUrl(filters))
   .then(res => res.json())
-  .then(res => setState(res.results))
+  .then(res => getFiltersSlider(filters, res.results))
+  .then(res => setState(res))
     
 } 
 export default callApi;  

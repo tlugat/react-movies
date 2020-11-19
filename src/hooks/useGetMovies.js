@@ -1,10 +1,10 @@
 import callApi from '../Utils/callApi';
 import {useEffect} from 'react';
 
-const useGetMovies = (setState, type) => {
+const useGetMovies = (setState, filters) => {
   useEffect(() => {
-  callApi(setState, type)
-}, [setState, type])
+  callApi(setState, filters)
+}, [setState, filters])
 }
 
 export default useGetMovies;

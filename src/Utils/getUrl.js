@@ -6,12 +6,12 @@ export default function getUrl(filters) {
   
   if(filters.type === 'tv') {
     return (
-    `${url}/${filters.type}${key}&first_air_date_year=${filters.date}
+    `${url}/${filters.type}${key}&first_air_date_year=${filters.date[0]}
   &vote_average.gte=${filters.rate}&with_genres${filters.genre}&include_null_first_air_dates=false`
   )
   } else {
     return (
-      `${url}/${filters.type}${key}&vote_average.gte=${filters.rate}&primary_release_year=${filters.date}&with_genres${filters.genre}`
+      `${url}/${filters.type}${key}&vote_average.gte=${filters.rate}&primary_release_year=${filters.date[0]}&with_genres${filters.genre}`
     )
   } 
   
