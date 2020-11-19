@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import Accueil from '../Accueil/Accueil';
 import SearchBar from '../SearchBar/SearchBar';
 

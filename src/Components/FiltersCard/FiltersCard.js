@@ -52,9 +52,9 @@ export default function FiltersCard(props) {
 
   return (
     <div className="filtersCard">
-      <div>
-      <button value="movie" onClick={handleType}>Movies</button>
-      <button value="tv" onClick={handleType}>Tv-shows</button>
+      <div className="filterCard__sliders">
+        <button value="movie" onClick={handleType}>Movies</button>
+        <button value="tv" onClick={handleType}>Tv-shows</button>
       </div>
       <div>
         <Slider id={1} state={date} setFilters={setFilters} filters={filters}/>
