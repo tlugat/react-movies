@@ -1,9 +1,9 @@
 .filtersCard {
-  background: lightblue;
-  padding: 1rem;
+  padding: 1rem;;
   
-  &__sliders {
-    display: flex;
-    justify-content: center;
-  }
+}
+.sliders{
+  display: flex;
+  justify-content: center;
+  background: red;
 }
