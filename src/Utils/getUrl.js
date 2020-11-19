@@ -6,14 +6,14 @@ export default function getUrl(filters) {
   
   if(filters.type === 'tv') {
     return (
-    `${url}discover/${filters.type}${key}&first_air_date.gte=${filters.date[0]}-01-01&first_air_date.lte=${filters.date[1]}-12-30&vote_average.gte=${filters.rate[0]}&vote_average.lte=${filters.rate[1]}&primary_release_date.gte=${filters.date[0]}-01-01&vote_average.lte=${filters.rate[1]}&with_genres${filters.genre}&include_null_first_air_dates=false`
+    `${url}discover/${filters.type}${key}&first_air_date.gte=${filters.date[0]}-01-01&first_air_date.lte=${filters.date[1]}-12-30&vote_average.gte=${filters.rate[0]}&vote_average.lte=${filters.rate[1]}&primary_release_date.gte=${filters.date[0]}-01-01&vote_average.lte=${filters.rate[1]}&with_genres=${filters.genre.join('%2C')}&include_null_first_air_dates=false`
   )
   } /* else if(id) {
     return `${url}/${filters.type}/${id}/credits${key}`
   }  */
   else {
     return (
-      `${url}discover/${filters.type}${key}&vote_average.gte=${filters.rate[0]}&vote_average.lte=${filters.rate[1]}&primary_release_date.gte=${filters.date[0]}-01-01&primary_release_date.lte=${filters.date[1]}-12-30&with_genres${filters.genre}`
+      `${url}discover/${filters.type}${key}&vote_average.gte=${filters.rate[0]}&vote_average.lte=${filters.rate[1]}&primary_release_date.gte=${filters.date[0]}-01-01&primary_release_date.lte=${filters.date[1]}-12-30&with_genres=${filters.genre.join('%2C')}`
     )
   } 
   
