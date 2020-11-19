@@ -1,5 +1,4 @@
 import getUrl from './getUrl';
-import './getFiltersSlider';
 
 const callApi = (setState, filters, id) => {
   fetch(getUrl(filters, id))

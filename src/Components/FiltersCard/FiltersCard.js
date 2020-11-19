@@ -2,7 +2,7 @@ import Slider from '../Slider/Slider';
 import {useState} from'react';
 import GenreFilter from '../GenreFilter/GenreFilter';
 import getGenres from '../../Utils/getGenres';
-import '../FiltersCard/filtersCard.css';
+import '../FiltersCard/filtersCard.scss';
 import pushToArray from '../../Utils/pushToArray';
 import SortBy from '../SortBy/SortBy';
 import useGetGenres from '../../hooks/useGetGenres';
@@ -52,11 +52,20 @@ export default function FiltersCard(props) {
 
   return (
     <div className="filtersCard">
+      <div>
       <button value="movie" onClick={handleType}>Movies</button>
       <button value="tv" onClick={handleType}>Tv-shows</button>
-      <Slider id={1} state={date} setFilters={setFilters} filters={filters}/>
-      <Slider id={2} state={rate} setFilters={setFilters} filters={filters} />
-      <GenreFilter handleChecked={handleChecked} genres={genres}></GenreFilter>
+      </div>
+      <div>
+        <Slider id={1} state={date} setFilters={setFilters} filters={filters}/>
+      </div>
+      <div>
+        <Slider id={2} state={rate} setFilters={setFilters} filters={filters} />
+      </div>
+      <div>
+        <GenreFilter handleChecked={handleChecked} genres={genres}></GenreFilter>
+      </div>
+      
       <SortBy handleSelected={handleSelected}></SortBy>
       <button onClick={applyFilters}>Apply Filters</button>
     </div>

@@ -19,7 +19,7 @@ export default function Accueil() {
   useGetDefaultData(filters, setMedias)
 
   /* callApi(setMedias, filters); */
-  const applyFilters = () => callApi(setMedias, {});
+  const applyFilters = () => callApi(setMedias, filters);
 
   return (
     <>
