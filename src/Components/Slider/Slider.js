@@ -11,12 +11,8 @@ export default function RangeSlider(props) {
     const newFilters = {...props.filters};
     if(props.id === 1) {
       newFilters.date = newValue;
-      console.log(newValue);
-      console.log(newFilters.date)
     } else if(props.id === 2 ) {
       newFilters.rate = newValue;
-      console.log(newValue);
-      console.log(newFilters.rate)
     }
     setFilters(newFilters);
   };
