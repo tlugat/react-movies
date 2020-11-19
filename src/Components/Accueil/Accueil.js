@@ -11,8 +11,8 @@ export default function Accueil() {
   const [filters, setFilters] = useState({
     type: 'movie',
     genre: 18,
-    date: 2010,
-    rate: 8,
+    date: [2010, 2020],
+    rate: [0, 10],
     status: '',
   })
 
@@ -24,6 +24,7 @@ export default function Accueil() {
       <ul>
         {medias.map(media => <MovieCard key={media.id} url={media.poster_path} title={media.original_title || media.original_name}/>)}
       </ul>
+      <p></p>
     </>
   )
 }
