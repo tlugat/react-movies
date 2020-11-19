@@ -1,8 +1,11 @@
 import Slider from '../Slider/Slider';
 import {useState} from'react';
 import GenreFilter from '../GenreFilter/GenreFilter';
-import useGetGenres from '../../hooks/useGetGenres';
+import getGenres from '../../Utils/getGenres';
 import '../FiltersCard/filtersCard.css';
+import pushToArray from '../../Utils/pushToArray';
+import SortBy from '../SortBy/SortBy';
+import useGetGenres from '../../hooks/useGetGenres';
 
 export default function FiltersCard(props) {
   const applyFilters = props.applyFilters;
@@ -12,35 +15,38 @@ export default function FiltersCard(props) {
   const rate = [0, 10];
 
   const [genres, setGenres] = useState([]);
+  
+  const [isChecked, setIsChecked] = useState([]);
 
-  useGetGenres(setGenres,filters);
+  const newFilters={...filters};
+  const newIsChecked = [...isChecked];
 
-  const [isChecked, setIsChecked] = useState();
+  useGetGenres(filters, setGenres);
 
   function handleChecked(event){
-    const currentGenre=event.target.value
-    const newFilters={...filters};
-    if(newFilters.genre.includes(currentGenre)){
-      newFilters.genre.splice(newFilters.genre.indexOf(currentGenre),1);
-    } else {
-      newFilters.genre.push(currentGenre);
-    } 
-    setFilters(newFilters)
-    const newIsChecked = {...isChecked};
-    newIsChecked.target = event.target;
-    newIsChecked.status = !newIsChecked.status;
+    const currentGenre = event.target.value
+    const currentInput = event.target
+    
+    pushToArray(newFilters.genre, currentGenre)
+    pushToArray(newIsChecked, currentInput)
+    setFilters(newFilters);
     setIsChecked(newIsChecked);
-    console.log(newIsChecked)
+  }
+
+  function handleSelected(e) {
+    const currentSort = e.target.value;
+    newFilters.sortBy = currentSort;
+    setFilters(newFilters);
   }
 
   const handleType = (e) => {
     const btn = e.target.value;
-    const newFilters = {...filters, genre:[]};
+    const newFilters = {...filters, genre:[], sortBy:''};
     newFilters.type = btn;
     setFilters(newFilters);
-    if(isChecked) {
-
-    }
+    isChecked.map(input => input.checked = false);
+    setIsChecked([]);
+    getGenres(setGenres,filters);
   };
 
 
@@ -50,8 +56,9 @@ export default function FiltersCard(props) {
       <button value="tv" onClick={handleType}>Tv-shows</button>
       <Slider id={1} state={date} setFilters={setFilters} filters={filters}/>
       <Slider id={2} state={rate} setFilters={setFilters} filters={filters} />
-      <button onClick={applyFilters} >Apply Filters</button>
       <GenreFilter handleChecked={handleChecked} genres={genres}></GenreFilter>
+      <SortBy handleSelected={handleSelected}></SortBy>
+      <button onClick={applyFilters}>Apply Filters</button>
     </div>
   )
 }

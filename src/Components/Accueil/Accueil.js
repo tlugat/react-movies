@@ -1,9 +1,8 @@
-import {useState} from 'react';
-import useGetMovies from '../../hooks/useGetMovies';
+import {useState, useEffect} from 'react';
 import FiltersCard from '../FiltersCard/FiltersCard';
 import MovieCard from '../MovieCard/MovieCard';
 import callApi from '../../Utils/callApi';
-
+import useGetDefaultData from '../../hooks/useGetDefaultData';
 export default function Accueil() {
 
   const [medias, setMedias] = useState([]);
@@ -11,12 +10,16 @@ export default function Accueil() {
   const [filters, setFilters] = useState({
     type: 'movie',
     genre: [],
-    date: [2010, 2020],
+    date: [2019, 2020],
     rate: [0, 10],
     status: '',
+    sortBy: 'release_date.desc'
   })
 
-  const applyFilters = () => callApi(setMedias, filters);
+  useGetDefaultData(filters, setMedias)
+
+  /* callApi(setMedias, filters); */
+  const applyFilters = () => callApi(setMedias, {});
 
   return (
     <>
