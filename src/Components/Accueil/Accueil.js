@@ -1,41 +1,30 @@
 import {useState} from 'react';
 import useGetMovies from '../../hooks/useGetMovies';
+import FiltersCard from '../FiltersCard/FiltersCard';
+import MovieCard from '../MovieCard/MovieCard';
+import callApi from '../../Utils/callApi';
 
-export default function TestAPi() {
+export default function Accueil() {
 
   const [medias, setMedias] = useState([]);
 
   const [filters, setFilters] = useState({
     type: 'movie',
-    genre: 18,
-    date: 2010,
-    note: 8,
+    genre: [],
+    date: [2010, 2020],
+    rate: [0, 10],
+    status: '',
   })
 
-  useGetMovies(setMedias, filters);
-
-  const handleType = (e) => {
-    const btn = e.target.value;
-    const newFilters = {...filters};
-    newFilters.type = btn;
-    setFilters(newFilters);
-
-  };
-
-  
+  const applyFilters = () => callApi(setMedias, filters);
 
   return (
     <>
-      <button value="movie" onClick={handleType}>Movies</button>
-      <button value="tv" onClick={handleType}>Tv-shows</button>
+      <FiltersCard applyFilters={applyFilters} setFilters={setFilters} filters={filters} ></FiltersCard>
       <ul>
-        {medias.map(media => <li>
-          <h3>
-            {media.original_title || media.original_name}
-          </h3>
-          <img src={`//image.tmdb.org/t/p/w220_and_h330_face/${media.poster_path}`} alt=""></img>
-          </li>)}
+        {medias.map(media => <MovieCard key={media.id} url={media.poster_path} title={media.original_title || media.original_name}/>)}
       </ul>
+      <p></p>
     </>
   )
 }
