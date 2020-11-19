@@ -10,7 +10,7 @@ export default function Accueil() {
 
   const [filters, setFilters] = useState({
     type: 'movie',
-    genre: 18,
+    genre: [],
     date: [2010, 2020],
     rate: [0, 10],
     status: '',
