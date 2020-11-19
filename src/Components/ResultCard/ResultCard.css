@@ -1,0 +1,50 @@
+body {
+    background-color: #131B30;
+}
+
+.resultCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.poster-wrapper {
+    position: relative;
+    width: 200px;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.poster-content {
+    opacity: 50%;
+}
+
+.info {
+    position: absolute;
+    color: white;
+    top: 16px;
+    left: 8px;
+    z-index: 1;
+    width: 180px;
+    font-size: 18px;
+}
+
+.input-wrapper {
+    max-width: 70%;
+    margin: 0 auto 0 auto;
+}
+  
+.add-content .input-wrapper input {
+justify-content: center;
+margin:32px auto 32px auto;
+background-color: #555b69;
+width: 100%;
+opacity: 50%;
+padding: 10px;
+border-radius: 50px;
+border: none;
+font-size: 1.25rem;
+}
+  
+
+
