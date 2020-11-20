@@ -1,52 +1,39 @@
 @import '../../scss/global.scss';
 
-body {
-    background-color: #131B30;
-}
-
-.resultCard {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.poster-wrapper {
+.Card {
     position: relative;
-    width: 200px;
-    margin-left:auto;
-    margin-right: auto;
+    overflow: hidden;
+	&:after {
+		content:'';
+		height: 100%;
+		width: 100%;
+		background: rgba(0, 0, 0, 0.178);
+		position: absolute;
+		top: 0;
+		transition: 0.5s;
+	}
+	&:hover:after {
+		background: rgba(0, 0, 0, 0.575);
+		z-index: -1;
+	}
+	&:hover {
+		transform: scale(1.1);
+	}
+	&__title {
+		position: absolute;
+		top: 5%;
+		left: 5%;
+		color: #fff;
+		font-weight: bold;
+		font-size: 18px;
+	}
+	&__average {
+		span {
+			@include d-flex(null, center, row);
+		}
+	}
+	&__averageTitle {
+		color: #fff;
+		font-size: 16px;
+	}
 }
-
-.poster-content {
-    opacity: 50%;
-}
-
-.info {
-    position: absolute;
-    color: white;
-    top: 16px;
-    left: 8px;
-    z-index: 1;
-    width: 180px;
-    font-size: 18px;
-}
-
-.input-wrapper {
-    max-width: 70%;
-    margin: 0 auto 0 auto;
-}
-  
-.add-content .input-wrapper input {
-justify-content: center;
-margin:32px auto 32px auto;
-background-color: #555b69;
-width: 100%;
-opacity: 50%;
-padding: 10px;
-border-radius: 50px;
-border: none;
-font-size: 1.25rem;
-}
-  
-
-
