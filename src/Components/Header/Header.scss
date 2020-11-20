@@ -12,6 +12,9 @@
   @include medium {
     width: 95vw;
     padding: 20px;
+
+  @include large {
+    width: 90vw;
   }
 
   &__logo {
