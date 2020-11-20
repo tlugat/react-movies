@@ -1,3 +1,5 @@
+import './PrimaryBtn.scss';
+
 export default function PrimaryBtn(props) {
   const value = props.value;
   const handleType = props.handleType;

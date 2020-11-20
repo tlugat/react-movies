@@ -1,6 +1,8 @@
 @import '../../scss/global.scss';
 
-.App {
+.app {
   background: linear-gradient(180deg, #2D3A58 0%, #171E2E 82.41%);
+  font-size:$fontSize-sm;
+  width: 100vw;
 }
 

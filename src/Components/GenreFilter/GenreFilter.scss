@@ -1,0 +1,15 @@
+@import '../../scss/global.scss';
+.genre {
+  margin: 0 0.5rem 0.8rem 0;
+  color: #fff;
+
+  input[type="checkbox"]{
+    margin-right: 0.5rem;
+    border-radius: 50px;
+  }
+  input[type="checkbox"]:checked + label{
+    
+      color: $green;
+    
+  }
+}
