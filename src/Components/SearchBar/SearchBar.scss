@@ -1,14 +1,10 @@
 @import '../../scss/global.scss';
 
-.acc {
-  width: 100%;
-  position: relative;
-  
-  &.inactive {
-    display: none
-  }
+input {
+    width: 100%;
+}
 
-  ul {
+ul {
     @include d-flex(center, center, row);
     flex-wrap: wrap;
 
@@ -18,6 +14,4 @@
       }
     }
   }
-}
-
 
