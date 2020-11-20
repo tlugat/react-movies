@@ -13,8 +13,6 @@ export default function Accueil(props) {
 
   useGetDefaultData(filters, setMedias)
 
-  /* callApi(setMedias, filters); */
-  
   const classNameAcc = isDisplayed ? 'acc' : 'acc inactive';
 
   return (
