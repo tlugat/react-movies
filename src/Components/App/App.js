@@ -3,6 +3,7 @@ import Accueil from '../Accueil/Accueil';
 import SearchBar from '../SearchBar/SearchBar';
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
+import FilmDetails from '../FilmDetails/FilmDetails'
 function App() {
   return (
     <div>
@@ -10,6 +11,7 @@ function App() {
       <SearchBar />
       <Accueil /> 
       <Footer />
+      <FilmDetails/>
     </div>    
   );
 }
