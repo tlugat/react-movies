@@ -1,7 +1,29 @@
 @import '../../scss/global.scss';
 
-input {
+
+.container {
     width: 100%;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    @include large {
+        margin-bottom: 3rem;
+    }
+    .add-content {
+        width: 100%;
+    }
+    .input-wrapper {
+        width: 100%;
+        @include d-flex(center, center, null);
+    }
+}
+
+input {
+    width: 80%;
+    background: rgba(200, 200, 200, 0.3);
+    border: none;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 2rem;
 }
 
 ul {
