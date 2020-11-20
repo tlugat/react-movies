@@ -1,4 +1,18 @@
+@import '../../scss/global.scss';
+
 .acc {
   width: 100%;
   overflow: hidden;
+  position: relative;
+  
+  &.inactive {
+    display: none
+  }
+
+  ul {
+    @include d-flex(space-around, center, row);
+    flex-wrap: wrap;
+  }
 }
+
+
