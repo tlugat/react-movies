@@ -3,6 +3,8 @@ import Accueil from '../Accueil/Accueil';
 import SearchBar from '../SearchBar/SearchBar';
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
+
+import FilmDetails from '../FilmDetails/FilmDetails';
 import FiltersCard from '../FiltersCard/FiltersCard';
 import callApi from '../../Utils/callApi';
 import {useState, useEffect} from 'react';
@@ -46,6 +48,7 @@ function App() {
       <Accueil isDisplayed={isDisplayed} medias={medias} setMedias={setMedias} setFilters={setFilters} filters={filters}/> 
       <FiltersCard isActive={isActive}  applyFilters={applyFilters} setFilters={setFilters} filters={filters} ></FiltersCard>
       <Footer />
+      <FilmDetails/>
     </div>    
   );
 }

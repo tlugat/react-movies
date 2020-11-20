@@ -1,7 +1,6 @@
 import './MovieCard.scss';
 import Star from '../AssetsComponents/Star/Star';
 
-
 export default function MovieCard(props) {
   const media = props.media;
   return (
@@ -20,8 +19,6 @@ export default function MovieCard(props) {
           </div>
         </span>
       </div>
-      
-        
       
     </li>
   )
