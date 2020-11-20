@@ -7,7 +7,7 @@ export const ResultCard = ({ movie }) => {
         <div className='result-card'>
             <div className='poster-wrapper'>
                 <img className='poster-content'
-                    src={`https://image.tmdb.org/t/p/w100${movie.poster_path}`}
+                    src={`https://image.tmdb.org/t/p/w220_and_h330_face/${movie.poster_path}`}
                     alt={`${movie.title} Poster`}
                 />
                 <div className="info">
