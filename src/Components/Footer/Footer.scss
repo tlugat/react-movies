@@ -1,0 +1,58 @@
+@import '../../scss/global.scss';
+
+.footer {
+  width: 100vw;
+  height: 280px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  background-color: #121111;
+  font-family: 'Lato',sans-serif;
+
+  @include tablet{
+    flex-direction: row;
+  }
+
+  &__elem{
+    color: white;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-around;
+    @include tablet {
+      width: 50vw;
+      font-size: 18px;
+    }
+
+    ul{
+      margin: 35px;
+    }
+    li{
+      margin-bottom: 20px;
+    }
+  }
+  &__buttons{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 28px;
+  }
+  &__button{
+    width: 142px;
+    height: 29px;
+    background-color:transparent;
+    color: #25DED3;
+    border: solid 1px #25DED3;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  &__logo{
+    width: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 28px 0px;
+  }
+}
+
