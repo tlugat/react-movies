@@ -20,15 +20,15 @@ export default function Accueil() {
   })
 
   useGetDefaultData(filters, setMedias)
-
+  console.log(medias);
   /* callApi(setMedias, filters); */
   const applyFilters = () => callApi(setMedias, filters);
 
   return (
     <div className="acc">
       <FiltersCard applyFilters={applyFilters} setFilters={setFilters} filters={filters} ></FiltersCard>
-      <ul>
-        {medias.map(media => <MovieCard key={media.id} url={media.poster_path} title={media.original_title || media.original_name}/>)}
+      <ul className="Resultfiltered">
+        {medias.map(media => <MovieCard key={media.id} url={media.poster_path} average={media.vote_average} title={media.original_title || media.original_name}/>)}
       </ul>
       <p></p>
     </div>
