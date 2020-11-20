@@ -1,0 +1,37 @@
+.Card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    
+
+    &__content {
+        position: relative;
+    }
+    &__poster {
+        opacity: 50%;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    &__title{
+        color:white;
+        z-index: 1;
+        opacity: 100%;
+        position:absolute;
+        width:100px;
+        font-size: 16px;
+        top: 16px;
+        left: 16px;
+        width: 160px;
+    }
+    &__average{
+        color:white;
+        font-size: 25px;
+    }
+    &__rate {
+        margin: 16px 0 32px;
+        display:flex;
+        justify-content:center;
+    }
+}
