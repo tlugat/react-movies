@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import FiltersCard from '../FiltersCard/FiltersCard';
 import MovieCard from '../MovieCard/MovieCard';
 import callApi from '../../Utils/callApi';
@@ -20,7 +20,7 @@ export default function Accueil() {
   })
 
   useGetDefaultData(filters, setMedias)
-  console.log(medias);
+  //console.log(medias);
   /* callApi(setMedias, filters); */
   const applyFilters = () => callApi(setMedias, filters);
 
