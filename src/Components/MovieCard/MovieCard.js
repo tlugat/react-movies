@@ -1,25 +1,23 @@
 import './MovieCard.scss';
-import StarIcon from '@material-ui/icons/Star';
+import Star from '../AssetsComponents/Star/Star';
 
 export default function MovieCard(props) {
-  const title = props.title;
-  const average = props.average;
-  const url = props.url;
+  const media = props.media;
   return (
     <li className="Card">
-      <div className="Card__content">
-        <div className="Card__title">
-          {title}
-        </div>
-          
+      <div className="Card__title">
+        {media.original_title || media.original_name}
+      </div>
+        
 
-        <img className="Card__poster" src={`//image.tmdb.org/t/p/w220_and_h330_face/${url}`} alt=""></img>
-        <div className="Card__rate">
-            <StarIcon ></StarIcon>
-            <div className="Card__average">
-              {average}/10
-            </div>
-        </div>
+      <img src={`//image.tmdb.org/t/p/w220_and_h330_face/${media.poster_path}`} alt=""></img>
+      <div className="Card__average">
+        <span>
+          <Star></Star>
+          <div className="Card__averageTitle">
+            {media.vote_average}/10
+          </div>
+        </span>
       </div>
       
     </li>

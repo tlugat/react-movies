@@ -1,37 +1,39 @@
-.Card{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction:column;
-    
+@import '../../scss/global.scss';
 
-    &__content {
-        position: relative;
-    }
-    &__poster {
-        opacity: 50%;
-        &:hover {
-            opacity: 1;
-        }
-    }
-    &__title{
-        color:white;
-        z-index: 1;
-        opacity: 100%;
-        position:absolute;
-        width:100px;
-        font-size: 16px;
-        top: 16px;
-        left: 16px;
-        width: 160px;
-    }
-    &__average{
-        color:white;
-        font-size: 25px;
-    }
-    &__rate {
-        margin: 16px 0 32px;
-        display:flex;
-        justify-content:center;
-    }
+.Card {
+	position: relative;
+	&:after {
+		content:'';
+		height: 100%;
+		width: 100%;
+		background: rgba(0, 0, 0, 0.178);
+		position: absolute;
+		top: 0;
+		transition: 0.5s;
+	}
+	&:hover:after {
+		background: rgba(0, 0, 0, 0.575);
+		z-index: -1;
+	}
+	&:hover {
+		transform: scale(1.1);
+	}
+	&__title {
+		position: absolute;
+		top: 5%;
+		left: 5%;
+		color: #fff;
+		font-weight: bold;
+		font-size: 18px;
+	}
+	&__average {
+		span {
+			@include d-flex(null, center, row);
+		}
+	}
+	&__averageTitle {
+		color: #fff;
+		font-size: 16px;
+	}
+
 }
