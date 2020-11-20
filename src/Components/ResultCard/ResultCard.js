@@ -1,5 +1,5 @@
 import React from 'react';
-import  './ResultCard.css';
+import  './ResultCard.scss';
 import '../../Utils/reset.css'
 
 export const ResultCard = ({ movie }) => {
