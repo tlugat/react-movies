@@ -5,9 +5,10 @@ import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 function App() {
   return (
-    <div>
+
+      
+    <div className="app">
       <Header />
-      <SearchBar />
       <Accueil /> 
       <Footer />
     </div>    

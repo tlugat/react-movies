@@ -56,18 +56,22 @@ export default function FiltersCard(props) {
 
   return (
     <div className="filtersCard">
-      <div className="sliders">
+      <div className="buttons">
         <PrimaryBtn text="Movies" value="movie" handleType={handleType}></PrimaryBtn>
         <PrimaryBtn text="Tv-shows" value="tv" handleType={handleType}></PrimaryBtn>
       </div>
-      <div>
+      <div className="sliders">
+        <h3 className="filtersCard__filterTitle">Release Date</h3>
         <Slider id={1} state={date} setFilters={setFilters} filters={filters}/>
       </div>
-      <div>
+      <div className="sliders">
+      <h3 className="filtersCard__filterTitle">Rattings</h3>
         <Slider id={2} state={rate} setFilters={setFilters} filters={filters} />
-      </div>
-      <div>
-        <GenreFilter handleChecked={handleChecked} genres={genres}></GenreFilter>
+      </div> 
+      <div className="genres">
+        <h3 className="filtersCard__filterTitle">Genres</h3>
+        <ul className="genres__items"><GenreFilter handleChecked={handleChecked} genres={genres}></GenreFilter></ul>
+        
       </div>
       
       <SortBy handleSelected={handleSelected}></SortBy>
