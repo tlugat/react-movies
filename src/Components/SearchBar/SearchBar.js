@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import ResultCard from '../ResultCard/ResultCard';
-
+import './SearchBar.scss';
 function SearchBar(props) {
 
   const [query, setQuery] = useState("");

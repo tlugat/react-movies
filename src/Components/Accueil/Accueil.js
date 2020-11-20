@@ -20,7 +20,7 @@ export default function Accueil(props) {
   return (
     <div className={classNameAcc}>
       <ul>
-        {medias.map(media => <MovieCard  key={media.id} url={media.poster_path} title={media.original_title || media.original_name}/>)}
+        {medias.map(media => <MovieCard  key={media.id} media={media}/>)}
       </ul>
       <p></p>
     </div>
