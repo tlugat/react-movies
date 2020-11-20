@@ -1,9 +1,34 @@
+@import '../../scss/global.scss';
+
 .filtersCard {
-  padding: 1rem;;
-  
+  padding: 0 0 1rem 0;
+  width: 100%;
+  overflow: hidden;
+  @include d-flex(space-around, center, column);
+  height: 100vh;
+  &__filterTitle {
+    font-size: 26px;
+    color: #ffffff
+  }
 }
-.sliders{
-  display: flex;
-  justify-content: center;
-  background: red;
+.buttons{
+  @include d-flex(space-around, center, null);
+  width: 100%;
+  overflow: hidden;
+}
+.sliders {
+  @include d-flex(center, center, column);
+  width: 100%;
+}
+.genres {
+  @include d-flex(center, center, column);
+  width: 80%;
+  h3 {
+    margin-bottom: 0.5rem;
+    
+  }
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
