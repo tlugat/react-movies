@@ -6,7 +6,7 @@ function SearchBar(props) {
   const [query, setQuery] = useState("");
   const [results, setResults ] = useState ([]);
 
-  const handleDisplayAcc = props.handleDisplayAcc;
+  const handleDisplayAcc = () => props.handleDisplayAcc;
 
   const onChange = e => {
     e.preventDefault();
@@ -25,9 +25,8 @@ function SearchBar(props) {
  
 
   return (
-    <div className="container">
-      <div className="add-content">
-        <div className = "input-wrapper">
+    <div className="search">
+        <div className = "search__input-wrapper">
           <input type="text"
           placeholder="Search ..."
           value={query}
@@ -36,16 +35,13 @@ function SearchBar(props) {
         </div>
         
         {results.length > 0 && (
-            <ul className="results">
+            <ul className="search__results">
               {results.map((movie) => (
-                <li key={movie.id}>
-                  <ResultCard movie={movie} />
-                </li>
+                <ResultCard key={movie.id} movie={movie} />
               ))}
             </ul>
           )}
       </div>
-    </div>
   );
 };
 
