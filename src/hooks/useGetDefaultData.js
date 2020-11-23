@@ -4,7 +4,7 @@ export default function useGetDefaultData(state, setState) {
   useEffect(() => {
     const newState = {...state}
     callApi(setState, newState)
-  }, []);
+  });
 
 }
 

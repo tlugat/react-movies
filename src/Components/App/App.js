@@ -1,13 +1,17 @@
+import {useState ,lazy } from 'react';
+import {BrowserRouter,Route,Switch,Redirect} from 'react-router-dom';
 import './App.scss';
-import Accueil from '../Accueil/Accueil';
-import SearchBar from '../SearchBar/SearchBar';
-import Footer from '../Footer/Footer'
-import Header from '../Header/Header'
-
-import FilmDetails from '../FilmDetails/FilmDetails';
-import FiltersCard from '../FiltersCard/FiltersCard';
 import callApi from '../../Utils/callApi';
-import {useState, useEffect} from 'react';
+
+const Accueil =lazy(()=> import('../Accueil/Accueil')) 
+  
+const Footer=lazy(()=> import('../Footer/Footer'))
+const Header=lazy(()=> import('../Header/Header'))
+
+const FilmDetails=lazy(()=> import('../FilmDetails/FilmDetails')) 
+const FiltersCard=lazy(()=> import('../FiltersCard/FiltersCard')) 
+
+
 
 function App() {
   const [medias, setMedias] = useState([]);
@@ -44,11 +48,32 @@ function App() {
   
   return (
     <div className="app">
-      <Header handleDisplayAcc={handleDisplayAcc} handleDisplayMenu={handleDisplayMenu} className="app__header" />
-      <Accueil isDisplayed={isDisplayed} medias={medias} setMedias={setMedias} setFilters={setFilters} filters={filters}/> 
-      <FiltersCard isActive={isActive}  applyFilters={applyFilters} setFilters={setFilters} filters={filters} ></FiltersCard>
-      <Footer />
-      <FilmDetails/>
+      <BrowserRouter>
+        <Header  handleDisplayAcc={handleDisplayAcc} handleDisplayMenu={handleDisplayMenu} className="app__header"/>
+    
+          <Switch>
+            <Route
+              exact 
+              path="/"
+              render={(props) => 
+                <div>
+                     <Accueil isDisplayed={isDisplayed} medias={medias} setMedias={setMedias} setFilters={setFilters} filters={filters}/> 
+                     <FiltersCard isActive={isActive}  applyFilters={applyFilters} setFilters={setFilters} filters={filters} ></FiltersCard>
+                </div> 
+              }
+            />
+            <Route
+            exact 
+            path="/Detail/:id"
+            component={FilmDetails}
+            />
+            <Redirect to="/" />
+          </Switch>
+          <Footer/>
+       
+      </BrowserRouter>
+
+
     </div>    
   );
 }

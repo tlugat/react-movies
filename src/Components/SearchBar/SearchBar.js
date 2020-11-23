@@ -1,12 +1,14 @@
-import React, {useState} from 'react';
-import ResultCard from '../ResultCard/ResultCard';
+import {useState, Suspense} from 'react';
+
 import './SearchBar.scss';
+import ResultCard from '../ResultCard/ResultCard';
+
 function SearchBar(props) {
 
   const [query, setQuery] = useState("");
   const [results, setResults ] = useState ([]);
 
-  const handleDisplayAcc = props.handleDisplayAcc;
+  const handleDisplayAcc = ()=>props.handleDisplayAcc;
 
   const onChange = e => {
     e.preventDefault();
@@ -34,16 +36,22 @@ function SearchBar(props) {
           onChange={onChange}
           />
         </div>
-        
-        {results.length > 0 && (
-            <ul className="results">
-              {results.map((movie) => (
-                <li key={movie.id}>
-                  <ResultCard movie={movie} />
-                </li>
-              ))}
-            </ul>
+        <Suspense fallback="loading...">
+          {results.length > 0 && (
+              <ul className="results">
+                {results.map((movie) => 
+           
+
+                  <li key={movie.id}>
+                    <ResultCard movie={movie} />
+                  </li>
+
+                )}
+               
+              </ul>
           )}
+        </Suspense>
+        
       </div>
     </div>
   );

@@ -1,16 +1,19 @@
 import './MovieCard.scss';
 import Star from '../AssetsComponents/Star/Star';
+import Card from '../Card/Card';
 
 export default function MovieCard(props) {
   const media = props.media;
+  //const filters= props.filters
+  
   return (
     <li className="Card">
       <div className="Card__title">
         {media.original_title || media.original_name}
       </div>
         
-
-      <img src={`//image.tmdb.org/t/p/w220_and_h330_face/${media.poster_path}`} alt=""></img>
+        <Card id={media.id}  poster_path={media.poster_path}/>
+      
       <div className="Card__average">
         <span>
           <Star></Star>

@@ -12,13 +12,14 @@ export default function Accueil(props) {
   
 
   useGetDefaultData(filters, setMedias)
+  
 
   const classNameAcc = isDisplayed ? 'acc' : 'acc inactive';
 
   return (
     <div className={classNameAcc}>
       <ul>
-        {medias.map(media => <MovieCard  key={media.id} media={media}/>)}
+        {medias.map(media => <MovieCard  key={media.id} media={media} filters={filters.type}/>)}
       </ul>
       <p></p>
     </div>
