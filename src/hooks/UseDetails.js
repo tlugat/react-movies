@@ -28,7 +28,7 @@ function useDetails(id,type) {
           
           //console.log(video)
           //Credit
-            console.log(credit)
+            //console.log(credit)
             const director_name=()=>{
               if(credit.cast.find(peo=>peo.known_for_department==="Directing")){
                   const directors=credit.cast.filter(peo=>peo.known_for_department==="Directing")
@@ -63,12 +63,11 @@ function useDetails(id,type) {
               }
             }
             
-            console.log(actors_names())
          
 
             
           //Recomment
-            const recomendations= recomend.results.slice(0,5)
+            const recomendations=()=> recomend.results.slice(0,5)?recomend.results.slice(0,5):null
             
             
 
@@ -79,7 +78,7 @@ function useDetails(id,type) {
 
 
             //Merge and SetData
-            setRecomend([...recomendations])
+            setRecomend([...recomendations()])
             setDetail({
               ...detail,
               country:country(),
