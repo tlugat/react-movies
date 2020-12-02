@@ -1,24 +1,25 @@
 @import '../../scss/global.scss';
 
 .filtersCard {
-  padding: 0 0 1rem 0;
-  width: 100%;
+ 
+  width: 100vw;
   overflow: hidden;
   @include d-flex(space-around, center, column);
   height: 100vh;
   background: linear-gradient(180deg, #2D3A58 0%, #171E2E 82.41%);
-  transform: translateX(100%);
+  transform: translateY(135%);
   transition: 0.5s ease-in-out;
   position: absolute;
-  top: 10%;
-
+  top: -130%;
+  z-index:1;
   &__filterTitle {
     font-size: 26px;
     color: #ffffff
   }
 
   &.active {
-    transform: translateX(0);
+    transform: translateY(0);
+   
   }
 }
 .buttons{

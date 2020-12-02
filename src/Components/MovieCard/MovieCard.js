@@ -11,8 +11,10 @@ export default function MovieCard(props) {
       <div className="Card__title">
         {media.original_title || media.original_name}
       </div>
-        
+        <div>
         <Card id={media.id}  poster_path={media.poster_path}/>
+        </div>
+        
       
       <div className="Card__average">
         <span>

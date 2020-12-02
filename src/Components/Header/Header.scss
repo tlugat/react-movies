@@ -24,7 +24,7 @@
     }
 
   }
-
+  
   &__title{
     width: 250px;
     display: flex;
@@ -34,25 +34,23 @@
     color: white;
     padding: 0px 40px;
     margin-top: 5px;
-
-    @include medium{
-      padding: 0px 20px;
-      width: 300px;
-      font-size: 40px;
-    }
-
-    @include large {
-      width: 1000px;
-      font-size: 80px;
-    }
+  
+  &__openMenu{
+    font-size: 2rem;
+    margin: 20px;
+    display: none;
+    cursor: pointer;
+  
+  }
+  &__mainMenu{
+   z-index:2;
+  }
     h1{
       font-weight:100;
       padding: 5px;
     }
   }
 
-  &__title--principal{
-    font-weight: bolder;
-  }
+  
 }
 }

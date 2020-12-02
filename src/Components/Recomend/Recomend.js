@@ -1,7 +1,7 @@
 import MovieCard from'../MovieCard/MovieCard';
 export default function Recomend(props){
    const recomendations =props.recomend
-    console.log(recomendations)
+    //console.log(recomendations)
     return(
         <div className='film__plus'>
           <h2>You may also like : </h2>

@@ -54,7 +54,7 @@ function FilmDetails(props) {
         </div>
         <div className='film__trailer'>
           {video?<h2>Trailer :</h2>:null}
-          {video? <iframe width="560" height="315" src={`https://www.youtube.com/embed/${video}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>:null}
+          {video? <iframe id="video" width="560" height="315" src={`https://www.youtube.com/embed/${video}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>:null}
          
         </div>
         {recomend?<Recomend recomend={recomend}/>:null}

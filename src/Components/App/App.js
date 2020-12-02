@@ -50,15 +50,16 @@ function App() {
     <div className="app">
       <BrowserRouter>
         <Header  handleDisplayAcc={handleDisplayAcc} handleDisplayMenu={handleDisplayMenu} className="app__header"/>
-    
+        
           <Switch>
             <Route
               exact 
               path="/"
               render={(props) => 
                 <div>
-                     <Accueil isDisplayed={isDisplayed} medias={medias} setMedias={setMedias} setFilters={setFilters} filters={filters}/> 
                      <FiltersCard isActive={isActive}  applyFilters={applyFilters} setFilters={setFilters} filters={filters} ></FiltersCard>
+                     <Accueil isDisplayed={isDisplayed} medias={medias} setMedias={setMedias} setFilters={setFilters} filters={filters}/> 
+                     
                 </div> 
               }
             />

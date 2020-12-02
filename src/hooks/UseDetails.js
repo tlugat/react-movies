@@ -22,9 +22,16 @@ function useDetails(id,type) {
           const country=()=> detail.production_countries[0].name?detail.production_countries[0].name:null;
           
           //Video
-          //console.log(video)
+          //console.log(video.results)
 
-          const urlYoutube=()=>video.results[0].key?video.results[0].key:null;
+          const urlYoutube=()=>{
+            if(video.results[0]=== undefined){
+              return null;
+            }else{
+              return video.results[0].key?video.results[0].key:null;
+            }
+          }
+         
           
           //console.log(video)
           //Credit
