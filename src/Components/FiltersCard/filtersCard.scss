@@ -10,7 +10,8 @@
   transform: translateX(100%);
   transition: 0.5s ease-in-out;
   position: absolute;
-  top: 10%;
+  top: 0;
+  z-index: 1;
 
   &__filterTitle {
     font-size: 26px;

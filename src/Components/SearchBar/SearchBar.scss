@@ -1,39 +1,40 @@
 @import '../../scss/global.scss';
 
 
-.container {
-    width: 100%;
-    padding: 1rem 0;
-    margin-bottom: 1rem;
-    @include large {
-        margin-bottom: 3rem;
-    }
-    .add-content {
-        width: 100%;
-    }
-    .input-wrapper {
-        width: 100%;
-        @include d-flex(center, center, null);
-    }
+.search {
+	width: 100%;
+	padding: 1rem 0;
+	margin-bottom: 1rem;
+	@include large {
+			margin-bottom: 3rem;
+	}
+	&__input-wrapper {
+		width: 100%;
+		@include d-flex(center, center, null);
+		margin-bottom: 2rem;
+		position: relative;
+			input {
+				width: 80%;
+				background: rgba(200, 200, 200, 0.3);
+				border: none;
+				padding: 1rem;
+				border-radius: 2rem;
+			}
+	}
+	&__results {
+		@include d-flex(center, center, row);
+		flex-wrap: wrap;
+	
+		li {
+			@include medium {
+				margin: 0 2.5% 2.5% 2.5%;
+			}
+		}
+	}
+
 }
 
-input {
-    width: 80%;
-    background: rgba(200, 200, 200, 0.3);
-    border: none;
-    padding: 1rem;
-    margin-bottom: 2rem;
-    border-radius: 2rem;
-}
 
-ul {
-    @include d-flex(center, center, row);
-    flex-wrap: wrap;
 
-    li {
-      @include medium {
-        margin: 0 2.5% 2.5% 2.5%;
-      }
-    }
-  }
+
 
