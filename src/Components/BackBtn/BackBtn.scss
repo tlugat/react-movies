@@ -1,0 +1,9 @@
+@import '../../scss/global.scss';
+
+.BackBtn {
+  width: 8rem;
+  color: #fff;
+  @include d-flex(space-around, center, row);
+  align-self: flex-start;
+  padding-left: 2rem;
+}

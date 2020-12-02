@@ -6,6 +6,7 @@ import SearchBar from '../SearchBar/SearchBar';
 function Header(props) {
 const handleDisplayMenu = props.handleDisplayMenu;
 const handleDisplayAcc = props.handleDisplayAcc;
+const filtersIsActive = props.filtersIsActive;
 
   return (
     <div className="header">
@@ -30,12 +31,14 @@ const handleDisplayAcc = props.handleDisplayAcc;
         </svg>
 
       </div>
-      <h1 className='header__title'>
+      {!filtersIsActive && (
+         <h1 className="header__title">
         <p>Find the</p>
         <p className="forwardWord">perfect movie</p>
         <p>to watch!</p>
       </h1>
-      <SearchBar handleDisplayAcc={handleDisplayAcc}>
+      )}
+      <SearchBar handleDisplayMenu={handleDisplayMenu} handleDisplayAcc={handleDisplayAcc}>
         <div onClick={handleDisplayMenu} className="header__brandsLogoBurger">
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M26.9047 2.56089H10.2229C9.76426 1.07415 8.47586 0 6.96103 0C5.4462 0 4.15779 1.07415 3.69917 2.56089H1.09527C0.490389 2.56089 0 3.09613 0 3.75633C0 4.41654 0.490389 4.95178 1.09527 4.95178H3.69924C4.15787 6.43852 5.44627 7.51267 6.9611 7.51267C8.47593 7.51267 9.76433 6.43852 10.223 4.95178H26.9047C27.5096 4.95178 28 4.41654 28 3.75633C28 3.09613 27.5096 2.56089 26.9047 2.56089ZM6.96103 5.12177C6.27123 5.12177 5.71001 4.50923 5.71001 3.75633C5.71001 3.00344 6.27123 2.39089 6.96103 2.39089C7.65083 2.39089 8.21204 3.00344 8.21204 3.75633C8.21204 4.50923 7.65083 5.12177 6.96103 5.12177Z" fill="white"/>

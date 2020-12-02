@@ -9,6 +9,7 @@ import pushToArray from '../../Utils/pushToArray';
 import SortBy from '../SortBy/SortBy';
 import useGetGenres from '../../hooks/useGetGenres';
 import PrimaryBtn from '../PrimaryBtn/PrimaryBtn';
+import BackBtn from '../BackBtn/BackBtn';
 
 export default function FiltersCard(props) {
   const applyFilters = props.applyFilters;
@@ -17,6 +18,7 @@ export default function FiltersCard(props) {
   const date = [1920, 2020];
   const rate = [0, 10];
   const isActive = props.isActive;
+  const handleDisplayMenu = props.handleDisplayMenu;
   const [genres, setGenres] = useState([]);
   
   const [isChecked, setIsChecked] = useState([]);
@@ -56,6 +58,7 @@ export default function FiltersCard(props) {
 
   return (
     <div className={classNameFilters}>
+      <BackBtn handleDisplayMenu={handleDisplayMenu}/>
       <div className="buttons">
         <PrimaryBtn text="Movies" value="movie" handleType={handleType}></PrimaryBtn>
         <PrimaryBtn text="Tv-shows" value="tv" handleType={handleType}></PrimaryBtn>

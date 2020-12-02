@@ -5,7 +5,7 @@ import Header from '../Header/Header'
 
 import FiltersCard from '../FiltersCard/FiltersCard';
 import callApi from '../../Utils/callApi';
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 
 function App() {
   const [medias, setMedias] = useState([]);
@@ -20,7 +20,7 @@ function App() {
   })
 
   const [isActive, setIsActive] = useState(false);
-  const [isDisplayed, setIsDisplayed] = useState(true)
+  const [isDisplayed, setIsDisplayed] = useState(true);
   const applyFilters = () => callApi(setMedias, filters);
 
   let newIsActive = {...isActive};
@@ -42,9 +42,9 @@ function App() {
   
   return (
     <div className="app">
-      <Header handleDisplayAcc={handleDisplayAcc} handleDisplayMenu={handleDisplayMenu} className="app__header" />
+      <Header filtersIsActive={isActive} handleDisplayAcc={handleDisplayAcc} handleDisplayMenu={handleDisplayMenu} className="app__header" />
       <Accueil isDisplayed={isDisplayed} medias={medias} setMedias={setMedias} setFilters={setFilters} filters={filters}/> 
-      <FiltersCard isActive={isActive}  applyFilters={applyFilters} setFilters={setFilters} filters={filters} ></FiltersCard>
+      <FiltersCard handleDisplayMenu={handleDisplayMenu} isActive={isActive}  applyFilters={applyFilters} setFilters={setFilters} filters={filters} ></FiltersCard>
       <Footer />
     </div>    
   );

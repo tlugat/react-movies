@@ -1,11 +1,15 @@
 import React, {useState} from 'react';
 import ResultCard from '../ResultCard/ResultCard';
+import LogoFilters from '../LogoFilters/LogoFilters';
+
 import './SearchBar.scss';
+
 function SearchBar(props) {
 
   const [query, setQuery] = useState("");
   const [results, setResults ] = useState ([]);
-
+  
+  const handleDisplayMenu = props.handleDisplayMenu;
   const handleDisplayAcc = () => props.handleDisplayAcc;
 
   const onChange = e => {
@@ -26,22 +30,23 @@ function SearchBar(props) {
 
   return (
     <div className="search">
-        <div className = "search__input-wrapper">
-          <input type="text"
-          placeholder="Search ..."
-          value={query}
-          onChange={onChange}
-          />
-        </div>
-        
-        {results.length > 0 && (
-            <ul className="search__results">
-              {results.map((movie) => (
-                <ResultCard key={movie.id} movie={movie} />
-              ))}
-            </ul>
-          )}
+      <div className = "search__input-wrapper">
+        <input type="text"
+        placeholder="Search..."
+        value={query}
+        onChange={onChange}
+        />
+        <LogoFilters handleDisplayMenu={handleDisplayMenu} />
       </div>
+      
+      {results.length > 0 && (
+          <ul className="search__results">
+            {results.map((movie) => (
+              <ResultCard key={movie.id} movie={movie} />
+            ))}
+          </ul>
+        )}
+    </div>
   );
 };
 

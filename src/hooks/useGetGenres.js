@@ -5,5 +5,5 @@ export default function useGetGenres(state, setState) {
   useEffect(() => {
     const newState = {...state}
     getGenres(setState, newState)
-  }, [])
+  }, [state, setState])
 }
