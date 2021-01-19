@@ -1,7 +1,7 @@
 @import '../../scss/global.scss';
 
 .footer {
-  width: 100vw;
+  width: 100%;
   height: 280px;
   display: flex;
   justify-content: space-around;
@@ -13,7 +13,7 @@
     flex-direction: row;
   }
 
-  &__elem{
+  &__brands{
     color: white;
     font-size: 14px;
     display: flex;
@@ -34,7 +34,6 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    padding-top: 28px;
   }
   &__button{
     width: 142px;

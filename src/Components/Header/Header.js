@@ -6,7 +6,6 @@ import SearchBar from '../SearchBar/SearchBar';
 function Header(props) {
 const handleDisplayMenu = props.handleDisplayMenu;
 const handleDisplayAcc = props.handleDisplayAcc;
-const filtersIsActive = props.filtersIsActive;
 
   return (
     <div className="header">
@@ -31,13 +30,11 @@ const filtersIsActive = props.filtersIsActive;
         </svg>
 
       </div>
-      {!filtersIsActive && (
-         <h1 className="header__title">
-        <p>Find the</p>
-        <p className="forwardWord">perfect movie</p>
-        <p>to watch!</p>
+        <h1 className="header__title">
+          <p>Find the</p>
+          <p className="forwardWord">perfect movie</p>
+          <p>to watch!</p>
       </h1>
-      )}
       <SearchBar handleDisplayMenu={handleDisplayMenu} handleDisplayAcc={handleDisplayAcc}>
         <div onClick={handleDisplayMenu} className="header__brandsLogoBurger">
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">

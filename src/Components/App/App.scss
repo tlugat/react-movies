@@ -7,6 +7,10 @@
   font-family: 'Lato',sans-serif;
   overflow: hidden;
   position: relative;
+
+  &.inactive {
+    height: 100vh;
+  }
 }
 
 
