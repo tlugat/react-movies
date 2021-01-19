@@ -3,15 +3,15 @@ import '../Footer/Footer.scss'
 function Footer() {
   return (
     <div className='footer'>
-      <div className='footer__elem'>
-        <div className='footer__partone'> 
+      <div className='footer__brands brands'>
+        <div> 
           <ul>
             <li>Terms/conditions</li>
             <li>Cookies policy  </li>
             <li>FAQ</li>
           </ul>
         </div>
-        <div className='footer__parttwo'>
+        <div>
           <ul>
             <li>Privacy policy </li>
             <li>Notifications</li>

@@ -2,5 +2,22 @@
   position: absolute;
   top: 50%;
   right: 10%;
-  transform: translateY(-50%)
+  transform: translateY(-50%);
+
+  &__wrapper {
+    position: relative;
+    
+    &::after {
+    content: '';
+    width: 0.8rem;
+    height: 0.8rem;
+    background: #10DB6D;
+    border-radius: 50%;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+  }
+  }
+
+  
 }

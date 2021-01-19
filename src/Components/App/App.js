@@ -27,7 +27,7 @@ function App() {
   let newIsDisplayed = {...isDisplayed};
  
   const handleDisplayMenu = () => {
-    newIsActive = !isActive;
+    newIsActive = !newIsActive;
     setIsActive(newIsActive);
   }
   
@@ -39,10 +39,12 @@ function App() {
     }
     setIsDisplayed(newIsDisplayed)
   }
+
+  const classNameApp = !isActive ? 'app' : 'app inactive';
   
   return (
-    <div className="app">
-      <Header filtersIsActive={isActive} handleDisplayAcc={handleDisplayAcc} handleDisplayMenu={handleDisplayMenu} className="app__header" />
+    <div className={classNameApp}>
+      <Header handleDisplayAcc={handleDisplayAcc} handleDisplayMenu={handleDisplayMenu} className="app__header" />
       <Accueil isDisplayed={isDisplayed} medias={medias} setMedias={setMedias} setFilters={setFilters} filters={filters}/> 
       <FiltersCard handleDisplayMenu={handleDisplayMenu} isActive={isActive}  applyFilters={applyFilters} setFilters={setFilters} filters={filters} ></FiltersCard>
       <Footer />

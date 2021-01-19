@@ -3,8 +3,12 @@ import GenreFilterBtn from './GenreFilterBtn/GenreFilterBtn';
 
 export default function GenreFilter(props) {
   const genres = props.genres;
+  const handleChecked = props.handleChecked;
   return (
-    genres.map(genre => <GenreFilterBtn className="genre" key={genre.id} handleChecked={props.handleChecked} genre={genre}></GenreFilterBtn> )
+    <ul className="genres__items">
+      {genres.map(genre => <GenreFilterBtn className="genre" key={genre.id} handleChecked={handleChecked} genre={genre}></GenreFilterBtn> )}
+    </ul>
+    
     
   )
 }
